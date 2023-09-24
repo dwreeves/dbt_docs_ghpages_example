@@ -18,12 +18,10 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: "3.11"
-        architecture: x64
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Deploy dbt docs
       run: |
-        git config --global user.name 'Github Actions'
         dbt docs generate
         mkdir docs
         cp dbt/target/manifest.json docs/manifest.json
