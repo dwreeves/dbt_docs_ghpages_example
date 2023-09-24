@@ -26,10 +26,10 @@ jobs:
         git config --global user.name 'Github Actions'
         dbt docs generate
         mkdir docs
-        mv dbt/target/manifest.json docs/manifest.json
-        mv dbt/target/catalog.json docs/catalog.json
-        mv dbt/target/index.html docs/index.html
-        ghp-import -n -p docs/
+        cp dbt/target/manifest.json docs/manifest.json
+        cp dbt/target/catalog.json docs/catalog.json
+        cp dbt/target/index.html docs/index.html
+        ghp-import -n -p -f docs/
       env:
         DBT_PROJECT_DIR: ./dbt
         DBT_PROFILES_DIR: ./dbt_profiles
