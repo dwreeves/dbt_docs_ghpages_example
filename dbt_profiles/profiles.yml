@@ -1,0 +1,6 @@
+dbt_docs_ghpages_example_profile:
+  target: dev
+  outputs:
+   dev:
+     type: duckdb
+     path: ":memory:"
